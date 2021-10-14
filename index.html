@@ -15,25 +15,11 @@
         <progress id="js-progress" value="0"></progress>
         <div class="button-group node-buttons" id="js-mode-buttons">
             <button
-                data-mode="start"
+                data-mode="pomodoro"
                 class="button active mode-button"
-                id="js-start"
+                id="js-pomodoro"
             >
-            Start
-            </button>
-            <button
-                data-mode="pause"
-                class="button mode-button"
-                id="js-pause"
-            >
-            Pause
-            </button>
-            <button
-                data-mode="stop"
-                class="button mode-button"
-                id="js-stop"
-            >
-            Stop
+            Pomodoro
             </button>
             <button
                 data-mode="short-break"
@@ -49,13 +35,25 @@
             >
             Long Break
             </button>
-
         </div>
+        <div class="clock" id="js-clock">
+            <span id="js-mintues">25</span>
+            <span class="separator">:</span>
+            <span id="js-seconds">00</span>
+        </div>
+        <button 
+            class="main-button"
+            data-mode="start"
+            id="js-btn"
+        >
+        Start
+        </button>
     </main>
-
-
-
-      
+    <div class="hidden">
+        <audio src="./audio/Starting Sound.mp3" data-sound="pomodoro"></audio>
+        <audio src="./audio/Ending Sound.mp3" data-sound="shortBreak"></audio>
+        <audio src="./audio/Ending Sound.mp3" data-sound="longBreak"></audio>
+    </div>
     <script src="timer.js"></script>
 </body>
 </html>
