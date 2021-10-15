@@ -1,44 +1,71 @@
-*, *::before, *::after {
+html {
     box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, p, li, figure, figcaption, blockquote, dl, dd {
+*, *::before, *::after {
+    box-sizing: inherit;
     margin: 0;
+    padding: 0;
 }
 
-ul[role = 'list'], ol[role ='list'] {
-    list-style: none;
-}
-
- html:focus-within {
-     scroll-behavior: smooth;
+:root {
+    --pomodoro: #e63946;
+    --shortBreak: #f1faee;
+    --longBreak: #1d3557;
 }
 
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    background-color: var(--pomodoro);
+    transition: background-color 1s ease;
+    font-family: 'Lato', sans-serif;
+    user-select: none;
+}
+
+progress {
+    border-radius: 2px;
+    width: 100%;
+    height: 12px;
+    position: fixed;
+    top: 0;
+}
+
+progress::-webkit-progess-bar {
+    background-color: rgba(0, 0, 0, 0.1);;
+}
+
+progress::webkit-progress-value {
+    background-color: #fff;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.clock {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 15rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
     font-family: 'Lato', sans-serif;
 }
 
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-input, button, textarea, select {
-    font: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0,01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+.mode-button {
+    font-size: 16px;
+    height: 28px;
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: 300;
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 0;
+    border-radius: 4px;
+    padding: 2px 12px;
+    background: none;
 }
